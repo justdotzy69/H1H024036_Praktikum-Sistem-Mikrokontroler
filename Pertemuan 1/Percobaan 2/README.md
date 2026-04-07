@@ -20,6 +20,9 @@ Menggunakan perulangan for yang terus menambah nilai pin target (ledPin++) mulai
 3. Jelaskan bagaimana program membuat LED kembali dari kanan ke kiri!
 
 
+Memberi jeda waktu penahanan eksekusi program (dalam satuan milidetik) sesuai dengan angka yang ada di dalam variabel timeDelay
+
+
 4. Buatkan program agar LED menyala tiga LED kanan dan tiga LED kiri secara bergantian dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 
 
