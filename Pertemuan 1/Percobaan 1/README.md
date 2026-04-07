@@ -4,7 +4,7 @@ Nama : Khoirul Rosyid Gunawan
 
 NIM : H1H024036
 
-1.5.4 Pertanyaan Praktikum : 
+### 1.5.4 Pertanyaan Praktikum : 
 1. Pada kondisi apa program masuk ke blok if?
 Program akan masuk dan memproses pernyataan di dalam blok if ketika kondisi variabel timeDelay bernilai kurang dari atau sama dengan 100 (yaitu timeDelay <= 100)
 2. Pada kondisi apa program masuk ke blok else?
@@ -13,8 +13,7 @@ Program masuk ke blok else ketika kondisi pada instruksi if tidak terpenuhi atau
 Fungsi dari perintah delay(timeDelay) adalah untuk memberikan jeda waktu (dalam milidetik) sebesar nilai yang tersimpan dalam variabel timeDelay [cite: 87, 90]. Jeda ini menentukan durasi seberapa lama LED akan menyala (HIGH) atau mati (LOW) sebelum melanjutkan ke baris kode berikutnya
 Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati), ubah menjadi LED tidak langsung reset → tetapi berubah dari cepat → sedang → mati dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 
-## 1. Jawaban 1.5.4 (Percabangan Kustom)
-**Tujuan:** Mengubah alur program agar LED tidak langsung *reset*, melainkan berubah dari kedipan makin cepat &rarr; sedang &rarr; mati.
+1. Jawaban 1.5.4 (Percabangan Kustom)
 
 Berikut adalah source code beserta penjelasan di setiap barisnya:
 
