@@ -12,7 +12,12 @@ Program masuk ke blok else ketika kondisi pada instruksi if tidak terpenuhi atau
 Fungsi dari perintah delay(timeDelay) adalah untuk memberikan jeda waktu (dalam milidetik) sebesar nilai yang tersimpan dalam variabel timeDelay [cite: 87, 90]. Jeda ini menentukan durasi seberapa lama LED akan menyala (HIGH) atau mati (LOW) sebelum melanjutkan ke baris kode berikutnya
 Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati), ubah menjadi LED tidak langsung reset → tetapi berubah dari cepat → sedang → mati dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 
+## 1. Jawaban 1.5.4 (Percabangan Kustom)
+**Tujuan:** Mengubah alur program agar LED tidak langsung *reset*, melainkan berubah dari kedipan makin cepat &rarr; sedang &rarr; mati.
 
+Berikut adalah source code beserta penjelasan di setiap barisnya:
+
+```cpp
 const int ledPin = 6;     // Mendeklarasikan variabel konstan untuk LED yang terhubung di Pin 6
 int timeDelay = 1000;     // Menetapkan nilai awal jeda waktu (delay) sebesar 1000ms (1 detik)
 int phase = 0;            // Variabel untuk melacak fase: 0 (Makin Cepat), 1 (Sedang), 2 (Mati)
