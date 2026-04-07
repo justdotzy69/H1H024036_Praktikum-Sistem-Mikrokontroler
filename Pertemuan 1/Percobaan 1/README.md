@@ -12,13 +12,13 @@ Program akan masuk dan memproses pernyataan di dalam blok if ketika kondisi vari
 2. Pada kondisi apa program masuk ke blok else?
 
 
-Program masuk ke blok else ketika kondisi pada instruksi if tidak terpenuhi atau tidak sesuai [cite: 36]. Dalam konteks program ini, artinya blok else akan dieksekusi ketika nilai timeDelay masih lebih besar dari 100. Jika kondisi tersebut terpenuhi, program akan mengeksekusi instruksi di dalamnya, yaitu mengurangi nilai timeDelay sebesar 100
+Program masuk ke blok else ketika kondisi pada instruksi if tidak terpenuhi atau tidak sesuai. Dalam konteks program ini, artinya blok else akan dieksekusi ketika nilai timeDelay masih lebih besar dari 100. Jika kondisi tersebut terpenuhi, program akan mengeksekusi instruksi di dalamnya, yaitu mengurangi nilai timeDelay sebesar 100
 
 
 3. Apa fungsi dari perintah delay(timeDelay)?
 
 
-Fungsi dari perintah delay(timeDelay) adalah untuk memberikan jeda waktu (dalam milidetik) sebesar nilai yang tersimpan dalam variabel timeDelay [cite: 87, 90]. Jeda ini menentukan durasi seberapa lama LED akan menyala (HIGH) atau mati (LOW) sebelum melanjutkan ke baris kode berikutnya
+Fungsi dari perintah delay(timeDelay) adalah untuk memberikan jeda waktu (dalam milidetik) sebesar nilai yang tersimpan dalam variabel timeDelay. Jeda ini menentukan durasi seberapa lama LED akan menyala (HIGH) atau mati (LOW) sebelum melanjutkan ke baris kode berikutnya
 
 
 4. Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati), ubah menjadi LED tidak langsung reset → tetapi berubah dari cepat → sedang → mati dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
