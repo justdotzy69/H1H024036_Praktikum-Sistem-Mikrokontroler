@@ -18,48 +18,39 @@ Jika program yang dibuat memiliki alur mati → lambat → cepat → reset (mati
 Berikut adalah source code beserta penjelasan di setiap barisnya:
 
 ```cpp
-const int ledPin = 6;     // Mendeklarasikan variabel konstan untuk LED yang terhubung di Pin 6
-int timeDelay = 1000;     // Menetapkan nilai awal jeda waktu (delay) sebesar 1000ms (1 detik)
-int phase = 0;            // Variabel untuk melacak fase: 0 (Makin Cepat), 1 (Sedang), 2 (Mati)
+const int ledPin = 6;           // Gunakan pin 6 untuk LED
+int timeDelay = 1000;           // Set jeda awal 1000ms (1 detik)
+int phase = 0;                  // Set fase awal ke 0 (fase cepat)
 
-void setup() {            // Fungsi bawaan yang hanya dieksekusi satu kali saat Arduino dinyalakan
-  pinMode(ledPin, OUTPUT);// Mengonfigurasi Pin 6 sebagai OUTPUT untuk mengeluarkan tegangan listrik
-}                         // Menutup blok fungsi setup()
+void setup() {                  // Fungsi inisialisasi awal
+  pinMode(ledPin, OUTPUT);      // Atur pin 6 sebagai output
+}                               // Tutup blok setup
 
-void loop() {             // Fungsi bawaan yang akan dieksekusi secara berulang-ulang tanpa henti
-  
-  // --- FASE 0: KEDIPAN MAKIN CEPAT ---
-  if (phase == 0) {             // Mengecek apakah program saat ini sedang berada di fase 0
-    digitalWrite(ledPin, HIGH); // Menyalakan LED (memberi tegangan)
-    delay(timeDelay);           // Memberi jeda nyala selama nilai timeDelay saat ini
-    digitalWrite(ledPin, LOW);  // Mematikan LED (memutus tegangan)
-    delay(timeDelay);           // Memberi jeda mati selama nilai timeDelay saat ini
-    
-    timeDelay -= 100;           // Mengurangi nilai timeDelay sebanyak 100ms agar kedipan makin cepat
-    
-    if (timeDelay <= 100) {     // Percabangan baru: mengecek jika jeda sudah <= 100ms (sangat cepat)
-      phase = 1;                // Jika ya, ubah variabel phase menjadi 1 untuk berpindah fase
-      timeDelay = 500;          // Set ulang nilai timeDelay menjadi 500ms untuk kecepatan "sedang"
-    }                           // Menutup blok if (timeDelay <= 100)
-  }                             // Menutup blok if (phase == 0)
-  
-  // --- FASE 1: KEDIPAN SEDANG KONSTAN ---
-  else if (phase == 1) {        // Jika tidak di fase 0, cek apakah sedang di fase 1
-    for(int i = 0; i < 5; i++) {// Perulangan for untuk membuat LED berkedip konstan sebanyak 5 kali
-      digitalWrite(ledPin, HIGH); // Menyalakan LED
-      delay(timeDelay);           // Menahan nyala selama 500ms (nilai timeDelay di fase 1)
-      digitalWrite(ledPin, LOW);  // Mematikan LED
-      delay(timeDelay);           // Menahan mati selama 500ms
-    }                             // Menutup blok perulangan for
-    phase = 2;                  // Setelah 5 kali berkedip, ubah phase ke 2 untuk berpindah fase
-  }                             // Menutup blok else if (phase == 1)
-  
-  // --- FASE 2: MATI / ISTIRAHAT ---
-  else if (phase == 2) {        // Jika tidak di fase 0 dan 1, cek apakah sedang di fase 2
-    digitalWrite(ledPin, LOW);  // Memastikan LED dimatikan
-    delay(3000);                // Menahan kondisi mati/istirahat ini selama 3000ms (3 detik)
-    
-    phase = 0;                  // Mereset variabel phase kembali ke 0 agar siklus mengulang dari awal
-    timeDelay = 1000;           // Mereset timeDelay kembali ke 1000ms seperti saat pertama kali
-  }                             // Menutup blok else if (phase == 2)
-}                               // Menutup blok fungsi loop()
+void loop() {                   // Fungsi utama berulang
+  if (phase == 0) {             // Jika program ada di fase 0
+    digitalWrite(ledPin, HIGH); // Nyalakan LED
+    delay(timeDelay);           // Jeda sesuai timeDelay
+    digitalWrite(ledPin, LOW);  // Matikan LED
+    delay(timeDelay);           // Jeda sesuai timeDelay
+    timeDelay -= 100;           // Kurangi jeda 100ms agar makin cepat
+    if (timeDelay <= 100) {     // Jika jeda sudah <= 100ms
+      phase = 1;                // Ganti ke fase 1 (sedang)
+      timeDelay = 500;          // Ubah jeda menjadi 500ms
+    }                           // Tutup blok if kecepatan
+  }                             // Tutup blok fase 0
+  else if (phase == 1) {        // Jika program ada di fase 1
+    for(int i = 0; i < 5; i++) {// Ulangi kedipan konstan 5 kali
+      digitalWrite(ledPin, HIGH);// Nyalakan LED
+      delay(timeDelay);         // Tahan selama 500ms
+      digitalWrite(ledPin, LOW); // Matikan LED
+      delay(timeDelay);         // Tahan selama 500ms
+    }                           // Tutup blok for
+    phase = 2;                  // Ganti ke fase 2 (mati)
+  }                             // Tutup blok fase 1
+  else if (phase == 2) {        // Jika program ada di fase 2
+    digitalWrite(ledPin, LOW);  // Pastikan LED dimatikan
+    delay(3000);                // Tahan mati selama 3 detik
+    phase = 0;                  // Kembali ke fase 0 (awal)
+    timeDelay = 1000;           // Kembalikan jeda ke 1 detik
+  }                             // Tutup blok fase 2
+}                               // Tutup blok loop
