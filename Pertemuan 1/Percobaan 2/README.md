@@ -11,6 +11,9 @@ NIM : H1H024036
   <img width="988" height="761" alt="image" src="https://github.com/user-attachments/assets/c81f055a-3565-46d9-b372-0be1fcf076cb" />
 
 
+  Link Tinkercad : https://www.tinkercad.com/things/fFTAPkLTFrv-praktikum-sistem-mikrokontroler?sharecode=cIMRoC2j4z5irz5n70mZq7R0rv444xX_U5jH_oYAJvQ
+
+
 2. Jelaskan bagaimana program membuat efek LED berjalan dari kiri ke kanan!
    
 
